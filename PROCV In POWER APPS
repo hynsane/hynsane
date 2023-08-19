@@ -1,0 +1,10 @@
+If(
+    DataCardValue9.Selected.Value = "Em Manutenção";
+    ForAll(
+        Distinct(
+            EmpresasComFrotas;
+            EMPRESA
+        );
+        {Result: ThisRecord.Value}
+    )
+)
