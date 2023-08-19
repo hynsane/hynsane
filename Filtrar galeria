@@ -1,0 +1,11 @@
+iltrar Filter(
+    ListaManutencoesCarretas;
+    (IsBlank(SearchBox_1.Text) || 
+        StartsWith(Frota; SearchBox_1.Text) || 
+        StartsWith(GO; SearchBox_1.Text)) &&  // Adicione esta linha
+    (IsBlank(DatePicker1_2.SelectedDate) && IsBlank(DatePicker1_3.SelectedDate) || 
+        ('Inicio da Manutenção' >= DatePicker1_2.SelectedDate && 'Inicio da Manutenção' <= DatePicker1_3.SelectedDate)) &&
+    (IsBlank(Dropdown1.Selected.Value) || Dropdown1.Selected.Value = Status_Manutencao) &&
+    (IsBlank(ComboBox3.Selected.Result) || ComboBox3.Selected.Result = Empresa) &&
+    (IsBlank(DropdownUnidade.Selected.Result) || DropdownUnidade.Selected.Result = Filial)
+)
